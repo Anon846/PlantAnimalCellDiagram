@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>plantandanimalcelldiagram</title>
+    <style>
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      body {
+        font-family: Arial;
+      }
+      #buttons {
+        text-align: center;
+        margin-top: 40vh;
+      }
+      button {
+        padding-left: 30px;
+        padding-right: 30px;
+        background: none;
+        border: none;
+        color: #000000;
+      }
+      button:active {
+        outline: none;
+      }
+      #animal_cell_vs_plant_cell h1 {
+        margin-bottom: 40vh;
+      }
+      #animal_cell_vs_plant_cell {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      #plant_cell_diagram, #animal_cell_diagram, #animal_cell_vs_plant_cell {
+        text-align: center;
+      }
+      #back_button1 {
+        display: block;
+        margin-left: 10%;
+        margin-top: -30vh;
+        margin-bottom: 10vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="buttons">
+      <button id = "plant_cell_button" onclick = "show_plant_cell();"><h1>Plant Cell</h1></button>
+      <button id = "animal_cell_button" onclick = "show_animal_cell();"><h1>Animal Cell</h1></button>
+      <button id = "animal_cell_vs_plant_cell_button" onclick = "show_animal_cell_vs_plant_cell();"><h1>Animal Cell vs Plant Cell</h1></button>
+    </div>
+    <div id = "plant_cell_diagram">
+      <button id = "back_button1" onclick = "show_plant_cell_and_animal_cell_and_plant_vs_animal_cell_buttons();"><h1>Back</h1></button>
+      <svg width = "500" height = "300">
+        <rect id = "cell_wall" width = "500" height = "300" style = "fill: orange; stroke-width: 0;" onclick = "alert('The Cell Wall provides support for the plant cell, which it's not in the animal cell.');" />
+        <rect id = "cell_membrane" width = "490" height = "290" style = "fill: purple; stroke-width: 0; x: 5px; y: 5px;" onclick = "alert('The Cell Membrane manages what goes in and out of the cell.');" />
+        <rect id = "cytoplasm" width = "480" height = "280" style = "fill: blue; stroke-width: 0; x: 10px; y: 10px;" onclick = "alert('The Cytoplasm is a lot like gel, which is all inside of the cell membrane, and takes up the whole cell.');" />
+        <ellipse id = "nuclear_membrane" cx = "200" cy = "100" rx = "55" ry = "35" style = "fill: #0066cc; stroke-width: 0;" onclick = "alert('The Nuclear Membrane controls what goes in and out of the nucleus.');" />
+        <ellipse id = "nucleus" cx = "200" cy = "100" rx = "50" ry = "30" style = "fill: yellow; stroke-width: 0;" onclick = "alert('The Nucleus is the organelle that controls what the cell does.');" />
+        <polyline id = "golgi_bodies" points = "400, 200 450, 100" style = "fill: none; stroke-width: 5; stroke: #ccff33;" onclick = "alert('The Golgi Bodies are what package protiens for the cell.');" />
+        <polyline id = "golgi_bodies" points = "400, 215 450, 115" style = "fill: none; stroke-width: 5; stroke: #ccff33;" onclick = "alert('The Golgi Bodies are what package protiens for the cell.');" />
+        <polyline id = "golgi_bodies" points = "400, 230 450, 130" style = "fill: none; stroke-width: 5; stroke: #ccff33;" onclick = "alert('The Golgi Bodies are what package protiens for the cell.');" />
+        <circle id = "ribosomes" cx = "50" cy = "250" r = "5" style = "fill: #339933; stroke-width: 0;" onclick = "alert('The Ribosomes make protein.');" />
+        <circle id = "ribosomes" cx = "260" cy = "260" r = "5" style = "fill: #339933; stroke-width: 0;" onclick = "alert('The Ribosomes make protein.');" />
+        <circle id = "ribosomes" cx = "380" cy = "50" r = "5" style = "fill: #339933; stroke-width: 0;" onclick = "alert('The Ribosomes make protein.');" />
+        <circle id = "ribosomes" cx = "200" cy = "25" r = "5" style = "fill: #339933; stroke-width: 0;" onclick = "alert('The Ribosomes make protein.');" />
+        <polyline id = "er" points = "245, 50 280, 130" style = "fill: none; stroke-width: 5; stroke: #00ffcc;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <polyline id = "er" points = "255, 55 283, 100" style = "fill: none; stroke-width: 5; stroke: #00ffcc;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <polyline id = "er" points = "265, 50 308, 120" style = "fill: none; stroke-width: 5; stroke: #00ffcc;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <circle id = "er" cx = "250" cy = "80" r = "5" style = "fill: #00ffcc; stroke-width: 0;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <circle id = "er" cx = "270" cy = "92" r = "5" style = "fill: #00ffcc; stroke-width: 0;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <circle id = "er" cx = "302" cy = "103" r = "5" style = "fill: #00ffcc; stroke-width: 0;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <circle id = "er" cx = "272" cy = "70" r = "5" style = "fill: #00ffcc; stroke-width: 0;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <ellipse id = "mitochondria" cx = "80" cy = "40" rx = "40" ry = "20" style = "fill: #000066; stroke-width: 0;" onclick = "alert('The Mitochondria is where energy will be released.');" />
+        <ellipse id = "chloroplasts" cx = "110" cy = "250" rx = "30" ry = "15" style = "fill: #003300; stroke-width: 0;" onclick = "alert('The Chloroplasts change light energy, into chemical energy, for the plant.');" />
+        <ellipse id = "chloroplasts" cx = "450" cy = "50" rx = "30" ry = "15" style = "fill: #003300; stroke-width: 0;" onclick = "alert('The Chloroplasts change light energy, into chemical energy, for the plant.');" />
+        <ellipse id = "vacuole" cx = "270" cy = "190" rx = "100" ry = "50" style = "fill: #ffffff; stroke-width: 0;" onclick = "alert('The Vacuoles stores what the cell needs, such as water, food, and some other things..');" />
+      </svg>
+    </div>
+    <div id = "animal_cell_diagram">
+      <button id = "back_button1" onclick = "show_plant_cell_and_animal_cell_and_plant_vs_animal_cell_buttons();"><h1>Back</h1></button>
+      <svg width = "500" height = "300">
+        <rect id = "cell_membrane" width = "490" height = "290" style = "fill: purple; stroke-width: 0; x: 5px; y: 5px;" onclick = "alert('The Cell Membrane manages what goes in and out of the cell.');" />
+        <rect id = "cytoplasm" width = "480" height = "280" style = "fill: blue; stroke-width: 0; x: 10px; y: 10px;" onclick = "alert('The Cytoplasm is a lot like gel, which is all inside of the cell membrane, and takes up the whole cell.');" />
+        <ellipse id = "nuclear_membrane" cx = "200" cy = "100" rx = "55" ry = "35" style = "fill: #0066cc; stroke-width: 0;" onclick = "alert('The Nuclear Membrane controls what goes in and out of the nucleus.');" />
+        <ellipse id = "nucleus" cx = "200" cy = "100" rx = "50" ry = "30" style = "fill: yellow; stroke-width: 0;" onclick = "alert('The Nucleus is the organelle that controls what the cell does.');" />
+        <polyline id = "golgi_bodies" points = "400, 200 450, 100" style = "fill: none; stroke-width: 5; stroke: #ccff33;" onclick = "alert('The Golgi Bodies are what package protiens for the cell.');" />
+        <polyline id = "golgi_bodies" points = "400, 215 450, 115" style = "fill: none; stroke-width: 5; stroke: #ccff33;" onclick = "alert('The Golgi Bodies are what package protiens for the cell.');" />
+        <polyline id = "golgi_bodies" points = "400, 230 450, 130" style = "fill: none; stroke-width: 5; stroke: #ccff33;" onclick = "alert('The Golgi Bodies are what package protiens for the cell.');" />
+        <circle id = "ribosomes" cx = "50" cy = "250" r = "5" style = "fill: #339933; stroke-width: 0;" onclick = "alert('The Ribosomes make protein.');" />
+        <circle id = "ribosomes" cx = "260" cy = "260" r = "5" style = "fill: #339933; stroke-width: 0;" onclick = "alert('The Ribosomes make protein.');" />
+        <circle id = "ribosomes" cx = "380" cy = "50" r = "5" style = "fill: #339933; stroke-width: 0;" onclick = "alert('The Ribosomes make protein.');" />
+        <circle id = "ribosomes" cx = "200" cy = "25" r = "5" style = "fill: #339933; stroke-width: 0;" onclick = "alert('The Ribosomes make protein.');" />
+        <polyline id = "er" points = "245, 50 280, 130" style = "fill: none; stroke-width: 5; stroke: #00ffcc;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <polyline id = "er" points = "255, 55 283, 100" style = "fill: none; stroke-width: 5; stroke: #00ffcc;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <polyline id = "er" points = "265, 50 308, 120" style = "fill: none; stroke-width: 5; stroke: #00ffcc;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <circle id = "er" cx = "250" cy = "80" r = "5" style = "fill: #00ffcc; stroke-width: 0;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <circle id = "er" cx = "270" cy = "92" r = "5" style = "fill: #00ffcc; stroke-width: 0;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <circle id = "er" cx = "302" cy = "103" r = "5" style = "fill: #00ffcc; stroke-width: 0;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <circle id = "er" cx = "272" cy = "70" r = "5" style = "fill: #00ffcc; stroke-width: 0;" onclick = "alert('The Endoplasmic Reticulum, or ER, moves things around the cell.');" />
+        <ellipse id = "mitochondria" cx = "80" cy = "40" rx = "40" ry = "20" style = "fill: #000066; stroke-width: 0;" onclick = "alert('The Mitochondria is where energy will be released.');" />
+        <ellipse id = "vacuole" cx = "220" cy = "220" rx = "50" ry = "25" style = "fill: #ffffff; stroke-width: 0;" onclick = "alert('The Vacuoles stores what the cell needs, such as water, food, and some other things..');" />
+        <ellipse id = "lysosome" cx = "445" cy = "260" rx = "40" ry = "20" style = "fill: #66ff66; stroke-width: 0;" onclick = "alert('The Lysosomes digest food.');" />
+      </svg>
+    </div>
+    <div id = "animal_cell_vs_plant_cell">
+      <button id = "back_button2" style = "margin-top: -30vh; display: block;" onclick = "show_plant_cell_and_animal_cell_and_plant_vs_animal_cell_buttons();"><h1>Back</h1></button>
+      <h1 style = "margin-top: -30vh;">One similarity that a plant and animal cell have is that they both have nucleuses, which control what the cell does.<br /><br />Another similarity that a plant and animal cell have in common is they both have endoplasmic reticulum, which moves things around the cell.<br /><br /> Lastly, what a plant and animal cell also have in common, is that they both have cytoplasm, which is a lot like gel, and takes up the whole cell.<br /><br />One difference that a plant and animal cell have is that the plant cell has chloroplasts, which convert light energy into chemical energy for the plant cell. <br /><br />Another difference that a plant and animal have is that the vacuoles, which store things like water and food, are much larger in plant cells than animal cells.</h1>
+    </div>
+    <script>
+      document.getElementById("plant_cell_diagram").style.display = "none";
+      document.getElementById("animal_cell_diagram").style.display = "none";
+      document.getElementById("animal_cell_vs_plant_cell").style.display = "none";
+      function show_plant_cell() {
+        document.getElementById("plant_cell_diagram").style.display = "";
+        document.getElementById("plant_cell_diagram").style = "animation: fade 2s;";
+        document.getElementById("animal_cell_diagram").style.display = "none";
+        document.getElementById("animal_cell_vs_plant_cell").style.display = "none";
+        document.getElementById("plant_cell_button").style.display = "none";
+        document.getElementById("animal_cell_button").style.display = "none";
+        document.getElementById("animal_cell_vs_plant_cell_button").style.display = "none";
+      }
+      function show_animal_cell() {
+        document.getElementById("animal_cell_diagram").style.display = "";
+        document.getElementById("animal_cell_diagram").style = "animation: fade 2s;";
+        document.getElementById("plant_cell_diagram").style.display = "none";
+        document.getElementById("animal_cell_vs_plant_cell").style.display = "none";
+        document.getElementById("plant_cell_button").style.display = "none";
+        document.getElementById("animal_cell_button").style.display = "none";
+        document.getElementById("animal_cell_vs_plant_cell_button").style.display = "none";
+      }
+      function show_plant_cell_and_animal_cell_and_plant_vs_animal_cell_buttons() {
+        document.getElementById("animal_cell_diagram").style.display = "none";
+        document.getElementById("plant_cell_diagram").style.display = "none";
+        document.getElementById("animal_cell_vs_plant_cell").style.display = "none";
+        document.getElementById("plant_cell_button").style.display = "";
+        document.getElementById("plant_cell_button").style = "animation: fade 2s;";
+        document.getElementById("animal_cell_button").style.display = "";
+        document.getElementById("animal_cell_button").style = "animation: fade 2s;";
+        document.getElementById("animal_cell_vs_plant_cell_button").style.display = "";
+        document.getElementById("animal_cell_vs_plant_cell_button").style = "animation: fade 2s;";
+      }
+      function show_animal_cell_vs_plant_cell() {
+        document.getElementById("animal_cell_vs_plant_cell").style.display = "";
+        document.getElementById("animal_cell_vs_plant_cell").style = "animation: fade 2s;";
+        document.getElementById("animal_cell_diagram").style.display = "none";
+        document.getElementById("plant_cell_diagram").style.display = "none";
+        document.getElementById("plant_cell_button").style.display = "none";
+        document.getElementById("animal_cell_button").style.display = "none";
+        document.getElementById("animal_cell_vs_plant_cell_button").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
